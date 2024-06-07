@@ -32,4 +32,11 @@ public class Motocicleta extends vehiculo {
     public void setTipoMotor(String tipoMotor) {
         this.tipoMotor = tipoMotor;
     }
+    
+    @Override
+    public void imprimir() {
+        super.imprimir();
+        System.out.println("Cilindrada: " + cilindrada);
+        System.out.println("Tipo de motor: " + tipoMotor);
+    }
 }
