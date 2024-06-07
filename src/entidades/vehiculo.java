@@ -1,7 +1,9 @@
 //Clase realizada por Gustavo Garcia
 package entidades;
 
-public class vehiculo {
+import interfaces.Imprimible;
+
+public class vehiculo implements Imprimible{
     //Parametros aplicando el encapulamiento
     private String marca;
     private String modelo;
@@ -53,5 +55,13 @@ public class vehiculo {
     //Metodo Setter
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+    
+    @Override
+    public void imprimir() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Año: " + año);
+        System.out.println("Tipo: " + tipo);
     }
 }
