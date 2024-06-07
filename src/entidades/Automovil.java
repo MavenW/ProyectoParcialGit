@@ -32,4 +32,11 @@ public class Automovil extends vehiculo {
     public void setTransmision(String transmision) {
         this.transmision = transmision;
     }
+    
+    @Override
+    public void imprimir() {
+        super.imprimir();
+        System.out.println("Puertas: " + puertas);
+        System.out.println("Transmisión: " + transmision);
+    }
 }

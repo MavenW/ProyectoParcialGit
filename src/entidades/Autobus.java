@@ -33,4 +33,11 @@ public class Autobus extends vehiculo {
     public void setTieneBaño(boolean tieneBaño) {
         this.tieneBaño = tieneBaño;
     }
+    
+    @Override
+    public void imprimir() {
+        super.imprimir();
+        System.out.println("Capacidad de pasajeros: " + capacidadPasajeros);
+        System.out.println("Tiene baño: " + tieneBaño);
+    }
 }
