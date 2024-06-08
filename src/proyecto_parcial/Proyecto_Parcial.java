@@ -1,14 +1,14 @@
 package proyecto_parcial;
 
 import Administrador.AdministradorPersona;
-import Administrador.AdminstradorReparacion;
+import Administrador.AdministradorReparacion;
 import java.util.Scanner;
 
 public class Proyecto_Parcial {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner in = new Scanner(System.in);
-        AdminstradorReparacion adminCursos = new AdminstradorReparacion();
+        AdministradorReparacion adminCursos = new AdministradorReparacion();
         AdministradorPersona adminPersonas = new AdministradorPersona();
          int opcion = 0;
         do {
