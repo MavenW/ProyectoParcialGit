@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Persona {
     private String nombres;
-    private String apellidos;
+    String apellidos;
     private String cedula;
     int edad;
     
