@@ -9,6 +9,9 @@ public class Clientes extends Persona{
     private String telefono;
     private String correoElectronico;
     
+    //sobreescritura de contructor
+    public Clientes(){}
+    
     //contructor con parametros
     public Clientes(String nombres, String apellidos, String cedula, int edad, String telefono, String correoElectronico){
         //con el operador de super hace referencia a los atributos de la clase padre Persona a la clase hija Clientes

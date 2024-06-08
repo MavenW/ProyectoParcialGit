@@ -89,17 +89,16 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
         int opcion = 0;
         do {
             System.out.println("\n**Menu de Reparaciones**");
-            System.out.println("1.Agregar reparacion \n2.Eliminar reparacion "
-                    + "\n3.Mostrar lista \n4.Buscar por descripcion \n0.Salir");
+            System.out.println("1.Agregar reparacion \n2.Lista de Reparaciones "
+                    + "\n3.Menu de repuestos \n4.Buscar por descripcion \n5.Buscar por codigo de factura \n0.Salir");
             opcion = Integer.parseInt(in.nextLine());
             switch (opcion) {
                 case 1:
-                    Reparacion reparacion = new Reparacion();
-                    reparacion.ingresarDatos(in);
-                    this.agregarReparacion(reparacion);
+                    Reparacion reparacion;
+                    AdministradorPersona admper = new AdministradorPersona();
+                    admper.agregarReparacion(in);
                     break;
                 case 2:
-                    System.out.println("Listas de Reparaciones");
                     this.mostrarReparacion();
                     break;
                 case 3:
@@ -112,7 +111,6 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                         switch (opcion) {
                             case 1:
                                 Repuestos ORepuestos = new Repuestos();
-                                ORepuestos.ingresarDatos(in);
                                 this.agregar(ORepuestos);
                                 break;
                             case 2:

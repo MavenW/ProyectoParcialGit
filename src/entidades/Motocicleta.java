@@ -9,6 +9,9 @@ public class Motocicleta extends Vehiculo {
     private int cilindrada;
     private String tipoMotor;
     
+    //Contructor `por defecto
+    public Motocicleta(){}
+    
     //Contructor Parametrizado que hereda atributos de la clase padre
     public Motocicleta(String marca, String modelo, int año, String tipo, float km, int cilindrada, String tipoMotor) {
         super(marca, modelo, año, tipo, km);
@@ -52,9 +55,10 @@ public class Motocicleta extends Vehiculo {
     }
     
     @Override
-    public void ingresarDatos(Scanner scan) {
+    public void ingresarDatos() {
+        Scanner scan = new Scanner(System.in);
         System.out.println("\nIngresando datos del Motocicleta:");
-        super.ingresarDatos(scan);
+        super.ingresarDatos();
         System.out.print("Cilindrada: ");
         this.setCilindrada(scan.nextInt());
         System.out.println("Tipo de motor: ");

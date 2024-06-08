@@ -18,25 +18,21 @@ public class Reparacion implements Imprimible {
     public Reparacion(){
     }
 
-    public Reparacion(Vehiculo vehiculo, Mecanico mecanico, Clientes cliente, String descripcion, double costo) {
-        this.ovehiculo = vehiculo;
+    public Reparacion(Mecanico mecanico, Clientes cliente, String descripcion, double costo) {
         this.mecanico = mecanico;
         this.cliente = cliente;
         this.descripcion = descripcion;
         this.costo = costo;
     }
-
+    
     public Vehiculo getVehiculo() {
         return ovehiculo;
     }
 
-    public void setVehiculo(Vehiculo ovehiculo) {
-        if (ovehiculo != null) {
-        this.ovehiculo = ovehiculo;
-        } else {
-            System.out.println("Vehiculo no válido. No puede ser null.");
-        }
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.ovehiculo = vehiculo;
     }
+
 
     public Mecanico getMecanico() {
         return mecanico;
@@ -121,13 +117,11 @@ public class Reparacion implements Imprimible {
     }
     
     public void ingresarDatos(Scanner scan){
-    ovehiculo.ingresarDatos(scan);
-    cliente.ingresarDatos();
-    mecanico.ingresarDatos();
     System.out.println("Ingrese la descripcion de la reparacion:");
     this.setDescripcion(scan.nextLine());
-    //System.out.println("Ingrese el costo de la reparacion:");
-    //this.setCosto(scan.nextDouble());
+    System.out.println("Ingrese el costo de la reparacion:");
+    float precio = Float.parseFloat(scan.nextLine());
+    this.setCosto(precio);
     }
     
 }

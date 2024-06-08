@@ -9,6 +9,8 @@ public class Automovil extends Vehiculo {
     private int puertas;
     private String transmision;
     
+    //contructor por defecto
+    public Automovil(){}
     
     //Contructor Parametrizado que hereda atributos de la clase padre
     public Automovil(String marca, String modelo, int año, String tipo, float km, int puertas, String transmision) {
@@ -53,13 +55,15 @@ public class Automovil extends Vehiculo {
     }
     
     @Override
-    public void ingresarDatos(Scanner scan) {
+    public void ingresarDatos() {
+        Scanner teclado = new Scanner(System.in);
         System.out.println("\nIngresando datos del Automovil:");
-        super.ingresarDatos(scan);
-        System.out.print("Puertas: ");
-        this.setPuertas(scan.nextInt());
-        System.out.println("Transmision(Manual-Automatica): ");
-        this.setTransmision(scan.nextLine());
+        super.ingresarDatos();
+        System.out.println("Transmision:");
+        this.setTransmision(teclado.nextLine());
+        System.out.println("Puertas (ej.2):");
+        int capacidad = Integer.parseInt(teclado.nextLine());
+        this.setPuertas(capacidad); 
     }
     
 }

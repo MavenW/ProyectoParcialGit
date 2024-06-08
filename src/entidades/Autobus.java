@@ -10,6 +10,9 @@ public class Autobus extends Vehiculo {
     private int capacidadPasajeros;
     private boolean tieneBaño;
     
+    //Contructor por Defecto
+    public Autobus(){}
+    
     //Contructor Parametrizado que hereda atributos de la clase padre
     public Autobus(String marca, String modelo, int año, String tipo, float km, int capacidadPasajeros, boolean tieneBaño) {
         super(marca, modelo, año, tipo, km);
@@ -49,9 +52,10 @@ public class Autobus extends Vehiculo {
     }
     
     @Override
-    public void ingresarDatos(Scanner scan) {
+    public void ingresarDatos() {
+        Scanner scan = new Scanner(System.in);
         System.out.println("\nIngresando datos del Autobus:");
-        super.ingresarDatos(scan);
+        super.ingresarDatos();
         System.out.print("Capacidad de opasajeros: ");
         this.setCapacidadPasajeros(scan.nextInt());
         System.out.println("Tiene baño(true-false): ");

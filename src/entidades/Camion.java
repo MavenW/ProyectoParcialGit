@@ -11,6 +11,9 @@ public class Camion extends Vehiculo {
     private String placa;
     private String tipoCamion;
     
+    //Contructor por defecto
+    public Camion(){}
+    
     //Contructor Parametrizado que hereda atributos de la clase padre
     public Camion(String marca, String modelo, int año, String tipo, float km, int capacidadCarga, int numeroEjes, String placa, String tipoCamion) {
         super(marca, modelo, año, tipo, km);
@@ -92,17 +95,18 @@ public class Camion extends Vehiculo {
     }
     
     @Override
-    public void ingresarDatos(Scanner scan) {
+    public void ingresarDatos() {
+        Scanner scan = new Scanner(System.in);
         System.out.println("\nIngresando datos del camion:");
-        super.ingresarDatos(scan);
-        System.out.print("Capacidad(ej. 2 toneladas):");
-        this.setCapacidadCarga(scan.nextInt());
-        System.out.print("Numerp de ejes(ej. 3):");
-        this.setNumeroEjes(scan.nextInt());
+        super.ingresarDatos();
         System.out.println("Numero de placa: ");
         this.setPlaca(scan.nextLine());
         System.out.println("Tipo de camion(Carga pesado-Liviano)");
         this.setTipoCamion(scan.nextLine());
+        System.out.print("Capacidad(ej. 2 toneladas):");
+        this.setCapacidadCarga(scan.nextInt());
+        System.out.print("Numerp de ejes(ej. 3):");
+        this.setNumeroEjes(Integer.parseInt(scan.nextLine()));
     }
     
 }

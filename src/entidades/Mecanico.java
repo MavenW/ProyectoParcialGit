@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Mecanico extends Persona{//inicio de la clase mecanico
     
+    //Sobreescritura de contructor
+    public Mecanico(){}
+    
     //constructor "Atribudos heredados de persona"
     public Mecanico(String nombres, String apellidos, String cedula, int edad){
         super(nombres,apellidos,cedula,edad);

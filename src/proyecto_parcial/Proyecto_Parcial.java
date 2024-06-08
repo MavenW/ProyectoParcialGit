@@ -13,11 +13,11 @@ public class Proyecto_Parcial {
          int opcion = 0;
         do {
             System.out.println("\n**Menu Principal**");
-            System.out.println("1.Menu Personas \n 2. Menu cursos \n0.Salir");
+            System.out.println("1.Menu Personas \n 2. Menu de Reparacion \n0.Salir");
             opcion = Integer.parseInt(in.nextLine());
             switch (opcion) {
                 case 1:
-                    //adminPersonas.menuDeOpciones();//llama al menu de administracion de personas
+                    adminPersonas.menuDeOpciones();//llama al menu de administracion de personas
                     break;
                 case 2:
                     adminCursos.menuDeOpciones(); //llama al menu de administracion de cursos
