@@ -5,7 +5,7 @@ package entidades;
 public class Camion extends vehiculo {
     private int capacidadCarga;
     private int numeroEjes;
-    private Mecanico mecanico;
+    private Mecanico omecanico;
     
     //Contructor Parametrizado que hereda atributos de la clase padre
     public Camion(String marca, String modelo, int año, String tipo, float km, int capacidadCarga, int numeroEjes) {
@@ -44,6 +44,6 @@ public class Camion extends vehiculo {
 
     @Override
     public void reparar(Mecanico mecanico) {
-        System.out.println("El camion: " + super.getMarca() + " " + super.getModelo() + " está siendo reparado por " + mecanico.getNombres() + " " + mecanico.getApellidos());
+        System.out.println("El camion: " + super.getMarca() + " " + super.getModelo() + " está siendo reparado por " + omecanico.getNombres() + " " + omecanico.getApellidos());
     }
 }
