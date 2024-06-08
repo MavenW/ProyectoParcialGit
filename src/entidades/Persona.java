@@ -8,6 +8,12 @@ public class Persona {
     private String nombres;
     private String apellidos;
     private String cedula;
+    private int edad;
+    
+    //constructor por defecto/sin parámetros con valores quemados
+    public Persona(){
+        edad = 35;
+    }
     
     public Persona(String nombres, String apellidos, String cedula){
         this.nombres = nombres;
@@ -73,20 +79,35 @@ public class Persona {
         }
     }
     
+    public int getEdad(){
+        return edad;
+    }
+    
+    public void setEdad(int edad){
+        if(edad <= 0){
+            System.out.println("Edad no valido");
+        }else{
+            this.edad = edad;
+            System.out.println("Edad valido");
+        }
+    }
+    
     public void mostrarInfo(){
-        System.out.println("Los nombres del cliente son: " + this.getNombres());
-        System.out.println("Los apellidos del cliente son: " + this.getApellidos());
-        System.out.println("La cedula del cliente es: " + this.getCedula());
+        System.out.println("Nombres: " + this.getNombres());
+        System.out.println("Apellidos: " + this.getApellidos());
+        System.out.println("Cedula: " + this.getCedula());
+        System.out.println("Edad: " + this.getEdad());
     }
     
     public void ingresarDatos(){
         Scanner datos = new Scanner(System.in);
-        System.out.println("Digite los nombres del cliente: ");
+        System.out.println("Digite los nombres: ");
         this.setNombres(datos.nextLine());
-        System.out.println("Digite los apellidos del cliente: ");
+        System.out.println("Digite los apellidos: ");
         this.setApellidos(datos.nextLine());
-        System.out.println("Digite la cedula del cliente: ");
+        System.out.println("Digite la cedula: ");
         this.setCedula(datos.nextLine());
+        System.out.println("Digite la edad: ");
+        this.setEdad(datos.nextInt());
     }
-     
 }
