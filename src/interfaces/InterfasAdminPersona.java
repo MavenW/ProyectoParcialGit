@@ -1,6 +1,5 @@
 package interfaces;
 //INTERFACES: posibilidad de tener herencia multiple
-import entidades.Clientes;
 import entidades.Persona;
 
 public interface InterfasAdminPersona {
