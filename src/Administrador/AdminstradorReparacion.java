@@ -6,7 +6,7 @@ import interfaces.InterfasAdminReparacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AdminstradorRepacion implements InterfasAdminReparacion{
+public class AdminstradorReparacion implements InterfasAdminReparacion{
 
     //coleccion para almacenar los repuestos
     public static ArrayList<Repuestos> listaRepuestos = new ArrayList();
@@ -84,7 +84,7 @@ public class AdminstradorRepacion implements InterfasAdminReparacion{
     }
     
     @Override
-    public void menuOpciones() {
+    public void menuDeOpciones() {
         Scanner in = new Scanner(System.in);
         int opcion = 0;
         do {

@@ -10,7 +10,7 @@ public interface InterfasAdminReparacion {
     public void mostrar();
     public Repuestos buscarxNombre(String nombRepuestos);
     //public void agregarRepuesto();
-    public void menuOpciones();
+    public void menuDeOpciones();
     public void agregarReparacion(Reparacion r);
     public void eliminarReparacion(Reparacion r);
     public void mostrarReparacion();
