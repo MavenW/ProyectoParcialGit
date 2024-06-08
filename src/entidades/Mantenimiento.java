@@ -1,5 +1,6 @@
 package entidades;
 
+
 public class Mantenimiento extends vehiculo {
     //Atributos con encapsulamiento
     
@@ -28,10 +29,7 @@ public class Mantenimiento extends vehiculo {
         return costos;
     }
     
-    public void setcostos(double costos){
-        this.costos=costos;
-    }
-    
+   
     public float getfechademantenimiento(){
         return fechademantenimiento;
     }
@@ -56,12 +54,37 @@ public class Mantenimiento extends vehiculo {
         this.cambioneumatico=cambioneumatico;
     }
     
+    @Override
+    public void imprimir(){
+        System.out.println("Costos de mantenimiento:"+getcostos());
+        System.out.println("Fecha de mantimiento:"+getfechademantenimiento());
+        System.out.println("Cambio de aceite:"+getcambiodeaceite());
+        System.out.println("Cambio de neumatico:"+getcambioneumatico());
+        
+        
+        
+    }
+    public void ingresar_datos(){
+        System.out.println("Indique la fecha de mantenimiento"
+                +this.fechademantenimiento);
+        System.out.println("Elija el tipo de mantenimiento:");
+        System.out.println("1. cambio de aceite");
+        System.out.println("2. cambio de neumatico");
+        int opcion = 2;
+        switch(opcion){
+            case 1:
+                System.out.println("El costo es de 10.99$");
+                break;
+            case 2:
+                System.out.println("El costo es de 49.99");
+                break;
+            default:
+                System.out.println("INCORRECTO");
+        }
+    }
     
 
-    @Override
-    public void reparar(Mecanico mecanico) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
+    
     
 }
