@@ -7,8 +7,8 @@ public class Motocicleta extends vehiculo {
     private String tipoMotor;
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Motocicleta(String marca, String modelo, int año, String tipo, int cilindrada, String tipoMotor) {
-        super(marca, modelo, año, tipo);
+    public Motocicleta(String marca, String modelo, int año, String tipo, float km, int cilindrada, String tipoMotor) {
+        super(marca, modelo, año, tipo, km);
         this.cilindrada = cilindrada;
         this.tipoMotor = tipoMotor;
     }
