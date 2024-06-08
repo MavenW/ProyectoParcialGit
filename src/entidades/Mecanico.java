@@ -14,7 +14,14 @@ public class Mecanico extends Persona{//inicio de la clase mecanico
         System.out.println("Appelido del //Mecanico//" + getApellidos());
         System.out.println("Cedula del //Mecanico//" + getCedula());
         System.out.println("Edad del //Mecanico//" + getEdad());
-        
+    }
+    
+    //metodo ingresar datos (usamos los getters de la clase Persona)
+    public void ingreseDatos(){
+        System.out.println("Ingrese los nombre del //Mecanico//" + getNombres());
+        System.out.println("Ingrese los apellidos del //Mecanico//" + getApellidos());
+        System.out.println("Ingrese la cedula del //Mecanico//" + getCedula());
+        System.out.println("Ingrese la edad del //Mecanico//" + getEdad());
     }
 
 }//fin de la clase mecanico
