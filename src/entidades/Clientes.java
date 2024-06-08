@@ -1,6 +1,8 @@
 //Elaborado por Daniel Fernando Castillo Mera - Grupo 2 - Curso: 2-2
 package entidades;
 
+import java.util.Scanner;
+
 public class Clientes extends Persona{
     //atributos con metodos de accesos privados
     //atributos propios de la clase hija Clienetes
@@ -15,14 +17,7 @@ public class Clientes extends Persona{
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
     }
-    
-    
-    //metodo getters
-    
-    
-    //metodo setters
-   
-    
+        
     public String getTelefono(){
         return telefono;
     }
@@ -51,5 +46,27 @@ public class Clientes extends Persona{
             this.correoElectronico = correoElectronico;
             System.out.println("Correo electronico valido");
         }
+    }
+    
+    public void mostrarDatos(){
+        System.out.println("Nombres: " + this.getNombres());
+        System.out.println("Apellidos: " + this.getApellidos());
+        System.out.println("Cedula: " + this.getCedula());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Telefono: " + this.getTelefono());
+        System.out.println("Correo Electronico: " + this.getCorreoElectronico());
+    }
+    
+    @Override
+    public void ingresarDatos(){
+        Scanner datos = new Scanner(System.in);
+        System.out.println("Digite los nombres: ");
+        this.setNombres(datos.nextLine());
+        System.out.println("Digite los apellidos: ");
+        this.setApellidos(datos.nextLine());
+        System.out.println("Digite la cedula: ");
+        this.setCedula(datos.nextLine());
+        System.out.println("Digite la edad: ");
+        this.setEdad(datos.nextInt());
     }
 }
