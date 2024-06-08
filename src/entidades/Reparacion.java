@@ -18,11 +18,12 @@ public class Reparacion implements Imprimible {
     public Reparacion(){
     }
 
-    public Reparacion(Mecanico mecanico, Clientes cliente, String descripcion, double costo) {
+    public Reparacion(Mecanico mecanico, Clientes cliente, String descripcion, double costo, String codigo) {
         this.mecanico = mecanico;
         this.cliente = cliente;
         this.descripcion = descripcion;
         this.costo = costo;
+        this.codigoFactura = UUID.randomUUID().toString();
     }
     
     public Vehiculo getVehiculo() {
@@ -87,12 +88,13 @@ public class Reparacion implements Imprimible {
     }
     
     public void generarFactura() {
-        // Genera un código único para la factura
-        this.codigoFactura = UUID.randomUUID().toString();
+         // Genera un código único para la factura
+        
         System.out.println("Factura de Reparación");
         System.out.println("---------------------");
         System.out.println("Código de Factura: " + getCodigoFactura());
         System.out.println("Detalles del Vehículo:");
+        System.out.println("Tipo: " + ovehiculo.getTipo());
         System.out.println("Marca: " + ovehiculo.getMarca());
         System.out.println("Modelo: " + ovehiculo.getModelo());
         System.out.println("\nDetalles del Mecánico:");

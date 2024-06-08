@@ -18,6 +18,7 @@ public interface InterfasAdminPersona {
     public abstract void mostrarCliente();
     public abstract void mostrarMecanico();
     public Persona buscarPersonaxCedula(String cedula);
+    public Reparacion buscarReparacionPorCodigoFactura(String codigoFactura);
     public void agregarReparacion(Reparacion r);
     public abstract void menuDeOpciones();
     

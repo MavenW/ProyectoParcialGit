@@ -99,6 +99,16 @@ public class AdministradorPersona implements InterfasAdminPersona{
     }
     
     @Override
+    public Reparacion buscarReparacionPorCodigoFactura(String codigoFactura) {
+        for (Reparacion r : listaReparaciones) {
+            if (r.getCodigoFactura().equals(codigoFactura)) {
+                return r;
+            }
+        }
+        return null;
+    }
+    
+    @Override
     public void agregarReparacion(Scanner in) {
         if(AdministradorPersona.listaPersonas.isEmpty() || AdministradorPersona.listaVehiculo.isEmpty()){
             System.out.println("Lista vacias");
@@ -158,9 +168,11 @@ public class AdministradorPersona implements InterfasAdminPersona{
         }while (seguir);
 
         // crear la reparacion
-        Reparacion rep = new Reparacion((Mecanico)per, (Clientes)cli, "", 0.0);
+        Reparacion rep = new Reparacion((Mecanico)per, (Clientes)cli, "", 0.0, "");
         rep.setVehiculo(veh);
         rep.ingresarDatos(in);
+        rep.generarFactura();
+        System.out.println("Factura generada con el código: " + rep.getCodigoFactura());
         this.agregarReparacion(rep);
     }
     
@@ -171,7 +183,7 @@ public class AdministradorPersona implements InterfasAdminPersona{
         do {
             System.out.println("\n**Menu de Persona**");
             System.out.println("1.Registrar Mecanico \n 2. Regsitrar Cliente "
-                    + "\n3.Mostrar lista \n4.buscar x cedula \n5.Lista d vehiculos \n0.Salir");
+                    + "\n3.Mostrar lista \n4.buscar x cedula \n5.Lista de vehiculos \n0.Salir");
             opcion = Integer.parseInt(in.nextLine());
             switch (opcion) {
                 case 1:
@@ -225,7 +237,7 @@ public class AdministradorPersona implements InterfasAdminPersona{
                     System.out.println("Mostrar Vehiculos:");
                     this.mostrarVehiculo();
                 case 0:
-                    System.out.println("Saliendo de menu de Instructores");
+                    System.out.println("Saliendo de menu de Persona");
                     break;
             }
         } while (opcion != 0);

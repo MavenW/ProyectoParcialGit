@@ -90,7 +90,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
         do {
             System.out.println("\n**Menu de Reparaciones**");
             System.out.println("1.Agregar reparacion \n2.Lista de Reparaciones "
-                    + "\n3.Menu de repuestos \n4.Buscar por descripcion \n5.Buscar por codigo de factura \n0.Salir");
+                    + "\n3.Menu de repuestos \n4.Ver factura completa \n5.Buscar por descripcion \n6.Buscar por codigo de factura \n0.Salir");
             opcion = Integer.parseInt(in.nextLine());
             switch (opcion) {
                 case 1:
@@ -98,6 +98,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                     AdministradorPersona admper = new AdministradorPersona();
                     admper.agregarReparacion(in);
                     break;
+
                 case 2:
                     this.mostrarReparacion();
                     break;
@@ -108,7 +109,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                         System.out.println("1.Registrar repuesto \n 2. Mostrar lista de repuesto "
                                 + "\n3. Buscar repuesto por nombre \n0. Salir");
                         opcion = Integer.parseInt(in.nextLine());
-                        switch (opcion) {
+                        switch (opcion){
                             case 1:
                                 Repuestos ORepuestos = new Repuestos();
                                 this.agregar(ORepuestos);
@@ -123,10 +124,22 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                                 //falta implementar
                                 break;
                             case 4:
-                        }
+                            }
                     } while (opcion != 0);
                     break;
                 case 4:
+                    System.out.println("Ingrese el codigo de la factura para mostrar los datos completos:");
+                    String codigoFactura = in.nextLine();
+                    reparacion = this.buscarPorCodigoFactura(codigoFactura);
+                    if (reparacion != null) {
+                        System.out.println("Factura encontrada: ");
+                        System.out.println("---------------------");
+                        reparacion.generarFactura();
+                    } else {
+                        System.out.println("No existe la factura con el codigo proporcionado");
+                    }
+                    break;
+                case 5:
                     System.out.println("Busqueda por descripcion, ingrese descripcion:");
                     String descripcion = in.nextLine();
                     reparacion = this.buscarPorDescripcion(descripcion);
@@ -137,9 +150,9 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                         System.out.println("No existe reparacion con esa descripcion");
                     }
                     break;
-                case 5:
+                case 6:
                     System.out.println("Busqueda por Codigo de factura, ingrese el codigo:");
-                    String codigoFactura = in.nextLine();
+                    codigoFactura = in.nextLine();
                     reparacion = this.buscarPorCodigoFactura(codigoFactura);
                     if (reparacion != null) {
                         System.out.println("Reparacion encontrada: ");

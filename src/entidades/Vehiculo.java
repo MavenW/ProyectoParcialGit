@@ -135,11 +135,14 @@ public class Vehiculo implements Imprimible{
         System.out.println("Modelo: " + getModelo());
         System.out.println("Año: " + getAño());
         System.out.println("Tipo: " + getTipo());
-        System.out.println("Kilometraje: " + getKilometraje());
+        System.out.println("Kilometraje: " + getKilometraje() + "km");
     }
     
     public void ingresarDatos(){
         Scanner scan = new Scanner(System.in);
+        System.out.println("Tipo: ");
+        String tipos = scan.nextLine();
+        this.setTipo(tipos);
         System.out.println("Codigo");
         String codigo = scan.nextLine();
         if(codigo.length() != 5){
@@ -153,10 +156,7 @@ public class Vehiculo implements Imprimible{
         System.out.println("Modelo: ");
         this.setModelo(scan.nextLine());
         System.out.println("Año: ");
-        this.setAño(scan.nextInt());
-        System.out.println("Tipo: ");
-        String tipos = scan.nextLine();
-        this.setTipo(tipos);
+        this.setAño(scan.nextInt());       
         System.out.println("Kilometraje: ");
         this.setKilometraje(scan.nextFloat());
     }

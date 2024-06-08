@@ -59,10 +59,11 @@ public class Motocicleta extends Vehiculo {
         Scanner scan = new Scanner(System.in);
         System.out.println("\nIngresando datos del Motocicleta:");
         super.ingresarDatos();
+        System.out.println("Tipo de motor: ");
+        String motor = scan.nextLine();
+        this.setTipoMotor(motor);
         System.out.print("Cilindrada: ");
         this.setCilindrada(scan.nextInt());
-        System.out.println("Tipo de motor: ");
-        this.setTipoMotor(scan.nextLine());
     }
     
 }
