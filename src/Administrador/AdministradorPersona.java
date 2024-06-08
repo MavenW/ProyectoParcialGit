@@ -238,7 +238,25 @@ public class AdministradorPersona implements InterfasAdminPersona{
                 case 5:
                     System.out.println("Mostrar Vehiculos:");
                     System.out.println("------------------");  
-                    this.mostrarVehiculo();
+                    for (Vehiculo v : this.listaVehiculo) {
+                        if (v instanceof Automovil) {
+                            Automovil auto = (Automovil) v;
+                            // Aquí puedes acceder a los métodos especializados de Automovil
+                            auto.imprimir();
+                        } else if (v instanceof Motocicleta) {
+                            Motocicleta moto = (Motocicleta) v;
+                            // Aquí puedes acceder a los métodos especializados de Motocicleta
+                            moto.imprimir();
+                        } else if (v instanceof Autobus) {
+                            Autobus bus = (Autobus) v;
+                            // Aquí puedes acceder a los métodos especializados de Autobus
+                            bus.imprimir();
+                        } else if (v instanceof Camion) {
+                            Camion camion = (Camion) v;
+                            // Aquí puedes acceder a los métodos especializados de Camion
+                            camion.imprimir();
+                        }
+                    }
                     break;
                 case 0:
                     System.out.println("Saliendo de menu de Persona");

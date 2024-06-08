@@ -65,11 +65,11 @@ public class Motocicleta extends Vehiculo {
         }
     }
     
-    public void esActual(){
+    public boolean esActual(){
         if(super.getAño() < 2015){
-            this.isActual = false;
+            return false;
         }else{
-            this.isActual = true;
+            return true;
         }
     }
     
@@ -79,6 +79,7 @@ public class Motocicleta extends Vehiculo {
         System.out.println("Cilindrada: " + getCilindrada());
         System.out.println("Tipo de motor: " + getTipoMotor());
         System.out.println("Placa: " + getPlaca());
+        System.out.println("Es actual: " + esActual());
     }
     
     @Override
