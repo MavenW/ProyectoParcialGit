@@ -78,7 +78,7 @@ public class AdministradorPersona implements InterfasAdminPersona{
     
     @Override
     public void mostrarVehiculo(){
-        for (Vehiculo v : this.listaVehiculo) {//metodo que mue4stra los objetos refenciados en ella
+        for ( Vehiculo v : this.listaVehiculo) {//metodo que mue4stra los objetos refenciados en ella
             v.imprimir();
         }
     }
@@ -179,6 +179,7 @@ public class AdministradorPersona implements InterfasAdminPersona{
     public void menuDeOpciones() {
         Scanner in = new Scanner(System.in);
         int opcion = 0;
+        Vehiculo vehiculo = null; // Variable para almacenar el vehículo seleccionado
         do {
             System.out.println("\n**Menu de Persona**");
             System.out.println("1.Registrar Mecanico \n2. Regsitrar Cliente "
@@ -191,32 +192,34 @@ public class AdministradorPersona implements InterfasAdminPersona{
                     this.agregar(oMecanico);// guardar en la coleccion
                     break;
                 case 2:
-                    Clientes oCliente = new Clientes();
-                    oCliente.ingresarDatos();
-                    this.agregar(oCliente);// guardar en la coleccion
-                    System.out.println("Ingrese el vehiculo del cliente.");
-                    System.out.println("1.-Automovil \n2.-Motocicleta \n 3.-Autobus \n 4.-Camion");
-                    opcion = Integer.parseInt(in.nextLine());
-                    if(opcion == 1){
-                        Automovil oAutomovil = new Automovil();
-                        oAutomovil.ingresarDatos();
-                        this.agregarVehiculo(oAutomovil);
-                    }else if(opcion == 2){
-                        Motocicleta oMotocicleta = new Motocicleta();
-                        oMotocicleta.ingresarDatos();
-                        this.agregarVehiculo(oMotocicleta);
-                    }else if(opcion == 3){
-                        Autobus oAutobus = new Autobus();
-                        oAutobus.ingresarDatos();
-                        this.agregarVehiculo(oAutobus);
-                    }else if(opcion == 4){
-                        Camion oCamion = new Camion();
-                        oCamion.ingresarDatos();
-                        this.agregarVehiculo(oCamion);
-                    }else{
+                Clientes oCliente = new Clientes();
+                oCliente.ingresarDatos();
+                this.agregar(oCliente); // guardar en la coleccion
+                System.out.println("Ingrese el vehiculo del cliente.");
+                System.out.println("1.-Automovil \n2.-Motocicleta \n 3.-Autobus \n 4.-Camion");
+                opcion = Integer.parseInt(in.nextLine());
+                switch (opcion) {
+                    case 1:
+                        vehiculo = new Automovil();
+                        break;
+                    case 2:
+                        vehiculo = new Motocicleta();
+                        break;
+                    case 3:
+                        vehiculo = new Autobus();
+                        break;
+                    case 4:
+                        vehiculo = new Camion();
+                        break;
+                    default:
                         System.out.println("Opcion incorrecta");
-                    }
-                    break;
+                        break;
+                }
+                if (vehiculo != null) {
+                    vehiculo.ingresarDatos();
+                    this.agregarVehiculo(vehiculo);
+                }
+                break;
                 case 3:
                     System.out.println("Mostrando Lista de Personas registradas");
                     this.mostrar();
@@ -234,7 +237,9 @@ public class AdministradorPersona implements InterfasAdminPersona{
                     break;
                 case 5:
                     System.out.println("Mostrar Vehiculos:");
+                    System.out.println("------------------");  
                     this.mostrarVehiculo();
+                    break;
                 case 0:
                     System.out.println("Saliendo de menu de Persona");
                     break;

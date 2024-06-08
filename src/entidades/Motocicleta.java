@@ -9,6 +9,7 @@ public class Motocicleta extends Vehiculo {
     private int cilindrada;
     private String tipoMotor;
     private String placa;
+    private Boolean isActual;
     
     //Contructor `por defecto
     public Motocicleta(){}
@@ -54,13 +55,21 @@ public class Motocicleta extends Vehiculo {
     }
     
     public void setPlaca(String pla){
-        String PlacaRegex = "([A-Z]{3}[-][0-9]{3}-[A-Z]{1}) | ([A-Z]{3}[-][0-9]{2}[-][0-9]{2})";
-        if (placa.length() != 9) {
+        String PlacaRegex = "([A-Z]{3}[-][0-9]{3}-[A-Z]{1})|([A-Z]{3}[-][0-9]{2}[-][0-9]{2})";
+        if (pla.length() != 9) {
             System.out.println("La placa debe tener 9 digitos");
         } else if (!pla.matches(PlacaRegex)) {
             System.out.println("la placa es inavlida");
         } else {
             this.placa = pla;
+        }
+    }
+    
+    public void esActual(){
+        if(super.getAño() < 2015){
+            this.isActual = false;
+        }else{
+            this.isActual = true;
         }
     }
     
