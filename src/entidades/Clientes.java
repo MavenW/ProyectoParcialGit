@@ -10,7 +10,6 @@ public class Clientes {
     private String cedula;
     private String telefono;
     private String correoElectronico;
-    //private int numeroFactura;
     
     //contructor por defecto
     public Clientes(){
@@ -23,10 +22,9 @@ public class Clientes {
         this.cedula = cedula;
     }
     
-    public Clientes(String telefono, String correoElectronico, int numeroFactura){
+    public Clientes(String telefono, String correoElectronico){
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
-        this.numeroFactura = numeroFactura;
     }
     
     //metodo getters
@@ -133,7 +131,5 @@ public class Clientes {
         this.setApellidos(datos.nextLine());
         System.out.println("Digite la cedula del cliente: ");
         this.setCedula(datos.nextLine());
-        
     }
-
 }
