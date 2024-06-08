@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class Reparacion implements Imprimible {
-    private vehiculo ovehiculo;
+    private Vehiculo ovehiculo;
     private Mecanico mecanico;
     private Clientes cliente;
     private String descripcion;
@@ -18,7 +18,7 @@ public class Reparacion implements Imprimible {
     public Reparacion(){
     }
 
-    public Reparacion(vehiculo vehiculo, Mecanico mecanico, Clientes cliente, String descripcion, double costo) {
+    public Reparacion(Vehiculo vehiculo, Mecanico mecanico, Clientes cliente, String descripcion, double costo) {
         this.ovehiculo = vehiculo;
         this.mecanico = mecanico;
         this.cliente = cliente;
@@ -26,11 +26,11 @@ public class Reparacion implements Imprimible {
         this.costo = costo;
     }
 
-    public vehiculo getVehiculo() {
+    public Vehiculo getVehiculo() {
         return ovehiculo;
     }
 
-    public void setVehiculo(vehiculo ovehiculo) {
+    public void setVehiculo(Vehiculo ovehiculo) {
         if (ovehiculo != null) {
         this.ovehiculo = ovehiculo;
         } else {
