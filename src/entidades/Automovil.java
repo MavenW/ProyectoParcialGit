@@ -14,10 +14,11 @@ public class Automovil extends Vehiculo {
     public Automovil(){}
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Automovil(String marca, String modelo, int año, String tipo, float km, int puertas, String transmision) {
+    public Automovil(String marca, String modelo, int año, String tipo, float km, int puertas, String transmision, String placa) {
         super(marca, modelo, año, tipo, km);
         this.puertas = puertas;
         this.transmision = transmision;
+        this.placa = placa;
     }
     
     //Metodo Getter para el atributo Puertas

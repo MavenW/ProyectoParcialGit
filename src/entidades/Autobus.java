@@ -15,10 +15,11 @@ public class Autobus extends Vehiculo {
     public Autobus(){}
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Autobus(String marca, String modelo, int año, String tipo, float km, int capacidadPasajeros, boolean tieneBaño) {
+    public Autobus(String marca, String modelo, int año, String tipo, float km, int capacidadPasajeros, boolean tieneBaño, String placa) {
         super(marca, modelo, año, tipo, km);
         this.capacidadPasajeros = capacidadPasajeros;
         this.tieneBaño = tieneBaño;
+        this.placa = placa;
     }
     
     //Metodo Getter para el atributo capacidadPasageros

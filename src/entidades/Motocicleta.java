@@ -14,10 +14,11 @@ public class Motocicleta extends Vehiculo {
     public Motocicleta(){}
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Motocicleta(String marca, String modelo, int año, String tipo, float km, int cilindrada, String tipoMotor) {
+    public Motocicleta(String marca, String modelo, int año, String tipo, float km, int cilindrada, String tipoMotor, String placa) {
         super(marca, modelo, año, tipo, km);
         this.cilindrada = cilindrada;
         this.tipoMotor = tipoMotor;
+        this.placa = placa;
     }
     
     //Metodo Getter para el atributo Cilindrada
