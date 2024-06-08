@@ -41,9 +41,4 @@ public class Automovil extends vehiculo {
         System.out.println("Transmisión: " + transmision);
     }
     
-    @Override
-    public void reparar(Mecanico mecanico) {
-        System.out.println("El automóvil " + getMarca() + " " + getModelo() + " está siendo reparado por ");
-    }
-    
 }

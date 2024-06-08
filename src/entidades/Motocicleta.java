@@ -39,9 +39,5 @@ public class Motocicleta extends vehiculo {
         System.out.println("Cilindrada: " + cilindrada);
         System.out.println("Tipo de motor: " + tipoMotor);
     }
-
-    @Override
-    public void reparar(Mecanico mecanico) {
-        System.out.println("La motocicleta " + getMarca() + " " + getModelo() + " está siendo reparada por ");
-    }
+    
 }

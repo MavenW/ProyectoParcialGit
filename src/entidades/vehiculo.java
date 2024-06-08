@@ -2,9 +2,8 @@
 package entidades;
 
 import interfaces.Imprimible;
-import interfaces.Reparable;
 
-public abstract class vehiculo implements Imprimible, Reparable{
+public abstract class vehiculo implements Imprimible{
     //Parametros aplicando el encapulamiento
     private String marca;
     private String modelo;
@@ -30,7 +29,19 @@ public abstract class vehiculo implements Imprimible, Reparable{
     }
 
     public void setMarca(String marca) {
-        this.marca = marca;
+        boolean valido = true;
+        char[] arreglo = marca.toCharArray();//convertir nombres en un arreglo de char
+        for (char c : arreglo) { // revisar cada caracter del arreglo
+            if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
+                //si hay un caracter que no se alfabetico o que no sea espacio en blanco
+                System.out.println("Marca no valida");
+                valido = false;
+                break; //salir del lazo for
+            }
+        }
+        if (valido==true) {// si valido es verdadero
+            this.marca = marca;
+        }
     }
 
     public String getModelo() {
@@ -39,7 +50,19 @@ public abstract class vehiculo implements Imprimible, Reparable{
     
     //Metodo setter
     public void setModelo(String modelo) {
-        this.modelo = modelo;
+        boolean valido = true;
+        char[] arreglo = modelo.toCharArray();//convertir nombres en un arreglo de char
+        for (char c : arreglo) { // revisar cada caracter del arreglo
+            if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
+                //si hay un caracter que no se alfabetico o que no sea espacio en blanco
+                System.out.println("Nombre no valido");
+                valido = false;
+                break; //salir del lazo for
+            }
+        }
+        if (valido==true) {// si valido es verdadero
+            this.modelo = modelo;
+        }
     }
 
     public int getAño() {
