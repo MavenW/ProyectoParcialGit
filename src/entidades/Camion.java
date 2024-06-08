@@ -5,13 +5,16 @@ package entidades;
 public class Camion extends vehiculo {
     private int capacidadCarga;
     private int numeroEjes;
-    private Mecanico omecanico;
+    private String placa;
+    private String tipoCamion;
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Camion(String marca, String modelo, int año, String tipo, float km, int capacidadCarga, int numeroEjes) {
+    public Camion(String marca, String modelo, int año, String tipo, float km, int capacidadCarga, int numeroEjes, String placa, String tipoCamion) {
         super(marca, modelo, año, tipo, km);
         this.capacidadCarga = capacidadCarga;
         this.numeroEjes = numeroEjes;
+        this.placa = placa;
+        this.tipoCamion = tipoCamion;
     }
     
     //Metodo Getter para el atributo CapacidadCarga
@@ -41,5 +44,50 @@ public class Camion extends vehiculo {
             System.out.println("Numero de ejes incorrecto");
         }
     }
-
+    
+    public String getPlaca(){
+        return this.placa;
+    }
+    
+    public void setPlaca(String pla){
+        String PlacaRegex = "([A-Z]{3}[-][0-9]{3}-[A-Z]{1}) | ([A-Z]{3}[-][0-9]{2}[-][0-9]{2})";
+        if (placa.length() != 9) {
+            System.out.println("La placa debe tener 9 digitos");
+        } else if (!pla.matches(PlacaRegex)) {
+            System.out.println("la placa es inavlida");
+        } else {
+            this.placa = pla;
+        }
+    }
+    
+    public String getTipoCamion(){
+        return this.tipoCamion;
+    }
+    
+    public void setTipoCamion(String tipo){
+        boolean valido = true;
+        char[] arreglo = tipo.toCharArray();//convertir en un arreglo de char
+        for (char c : arreglo) { // revisar cada caracter del arreglo
+            if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
+                //si hay un caracter que no se alfabetico o que no sea espacio en blanco
+                System.out.println("Tipo no valido");
+                valido = false;
+                break; //salir del lazo for
+            }
+        }
+        if (valido==true) {// si valido es verdadero
+            this.tipoCamion = tipo;
+        }
+    }
+    
+    @Override
+    public void imprimir() {
+        super.imprimir();
+        System.out.println("Capacidad de carga: " + getCapacidadCarga());
+        System.out.println("Numero de ejes: " + getNumeroEjes());
+        System.out.println("Placa: " + getPlaca());
+    }
+    
+    
+    
 }

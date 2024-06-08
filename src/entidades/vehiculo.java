@@ -30,7 +30,7 @@ public abstract class vehiculo implements Imprimible{
 
     public void setMarca(String marca) {
         boolean valido = true;
-        char[] arreglo = marca.toCharArray();//convertir nombres en un arreglo de char
+        char[] arreglo = marca.toCharArray();//convertir en un arreglo de char
         for (char c : arreglo) { // revisar cada caracter del arreglo
             if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
                 //si hay un caracter que no se alfabetico o que no sea espacio en blanco
@@ -51,11 +51,11 @@ public abstract class vehiculo implements Imprimible{
     //Metodo setter
     public void setModelo(String modelo) {
         boolean valido = true;
-        char[] arreglo = modelo.toCharArray();//convertir nombres en un arreglo de char
+        char[] arreglo = modelo.toCharArray();//convertir en un arreglo de char
         for (char c : arreglo) { // revisar cada caracter del arreglo
             if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
                 //si hay un caracter que no se alfabetico o que no sea espacio en blanco
-                System.out.println("Nombre no valido");
+                System.out.println("Modelo no valido");
                 valido = false;
                 break; //salir del lazo for
             }
@@ -71,7 +71,11 @@ public abstract class vehiculo implements Imprimible{
     
     //Metodo Setter
     public void setAño(int año) {
-        this.año = año;
+        if(año <= 0 || año > 2024){
+            System.out.println("Año invalido");
+        }else{
+            this.año = año;
+        }
     }
 
     public String getTipo() {
@@ -80,7 +84,19 @@ public abstract class vehiculo implements Imprimible{
     
     //Metodo Setter
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        boolean valido = true;
+        char[] arreglo = tipo.toCharArray();//convertir en un arreglo de char
+        for (char c : arreglo) { // revisar cada caracter del arreglo
+            if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
+                //si hay un caracter que no se alfabetico o que no sea espacio en blanco
+                System.out.println("Modelo no valido");
+                valido = false;
+                break; //salir del lazo for
+            }
+        }
+        if (valido==true) {// si valido es verdadero
+            this.tipo = tipo;
+        }
     }
     public float getKilometraje(){
         return this.kilometraje; 
@@ -96,11 +112,9 @@ public abstract class vehiculo implements Imprimible{
     
     @Override
     public void imprimir() {
-        System.out.println("Marca: " + marca);
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Año: " + año);
-        System.out.println("Tipo: " + tipo);
+        System.out.println("Marca: " + getMarca());
+        System.out.println("Modelo: " + getModelo());
+        System.out.println("Año: " + getAño());
+        System.out.println("Tipo: " + getTipo());
     }
-    
-    
 }

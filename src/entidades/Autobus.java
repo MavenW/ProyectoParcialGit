@@ -21,7 +21,11 @@ public class Autobus extends vehiculo {
     
     //Metodo Setter para el atributo capacidadPasageros
     public void setCapacidadPasajeros(int capacidadPasajeros) {
-        this.capacidadPasajeros = capacidadPasajeros;
+        if(capacidadPasajeros <= 0 || capacidadPasajeros > 50){
+            System.out.println("Capacidad invalida");
+        }else{
+            this.capacidadPasajeros = capacidadPasajeros;
+        }
     }
     
     //Metodo Getter para el atributo isTieneBaño
