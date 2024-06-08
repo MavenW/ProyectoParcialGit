@@ -8,8 +8,8 @@ public class Autobus extends vehiculo {
     private boolean tieneBaño;
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Autobus(String marca, String modelo, int año, String tipo, int capacidadPasajeros, boolean tieneBaño) {
-        super(marca, modelo, año, tipo);
+    public Autobus(String marca, String modelo, int año, String tipo, float km, int capacidadPasajeros, boolean tieneBaño) {
+        super(marca, modelo, año, tipo, km);
         this.capacidadPasajeros = capacidadPasajeros;
         this.tieneBaño = tieneBaño;
     }

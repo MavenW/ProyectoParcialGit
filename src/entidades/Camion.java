@@ -5,10 +5,11 @@ package entidades;
 public class Camion extends vehiculo {
     private int capacidadCarga;
     private int numeroEjes;
+    private Mecanico mecanico;
     
     //Contructor Parametrizado que hereda atributos de la clase padre
-    public Camion(String marca, String modelo, int año, String tipo, int capacidadCarga, int numeroEjes) {
-        super(marca, modelo, año, tipo);
+    public Camion(String marca, String modelo, int año, String tipo, float km, int capacidadCarga, int numeroEjes) {
+        super(marca, modelo, año, tipo, km);
         this.capacidadCarga = capacidadCarga;
         this.numeroEjes = numeroEjes;
     }
@@ -20,7 +21,11 @@ public class Camion extends vehiculo {
     
     //Metodo Setter para el atributo CapacidadCarga
     public void setCapacidadCarga(int capacidadCarga) {
-        this.capacidadCarga = capacidadCarga;
+        if(capacidadCarga >=2 || capacidadCarga <=4){
+            this.capacidadCarga = capacidadCarga;
+        }else{
+            System.out.println("Capacidad invalidad");
+        }
     }
     
     //Metodo Getter para el atributo NumeroEjes
@@ -30,11 +35,15 @@ public class Camion extends vehiculo {
     
     //Metodo Setter para el atributo NumeroEjes
     public void setNumeroEjes(int numeroEjes) {
-        this.numeroEjes = numeroEjes;
+        if(numeroEjes >= 2 || numeroEjes <=6){
+            this.numeroEjes = numeroEjes;
+        }else{
+            System.out.println("Numero de ejes incorrecto");
+        }
     }
 
     @Override
     public void reparar(Mecanico mecanico) {
-        System.out.println("El camion: " + getMarca() + " " + getModelo() + " está siendo reparado por ");
+        System.out.println("El camion: " + super.getMarca() + " " + super.getModelo() + " está siendo reparado por " + mecanico.getNombres() + " " + mecanico.getApellidos());
     }
 }

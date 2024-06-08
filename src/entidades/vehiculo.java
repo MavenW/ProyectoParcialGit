@@ -10,16 +10,18 @@ public abstract class vehiculo implements Imprimible, Reparable{
     private String modelo;
     private int año;
     private String tipo;
+    private float kilometraje;
     
     //contructor por defecto
     public vehiculo(){}
     
     //Contructor Parametrizado
-    public vehiculo(String marca, String modelo, int año, String tipo) {
+    public vehiculo(String marca, String modelo, int año, String tipo, float kilometraje) {
         this.marca = marca;
         this.modelo = modelo;
         this.año = año;
         this.tipo = tipo;
+        this.kilometraje = kilometraje;
     }
     
     //Metodos Getter
