@@ -1,6 +1,5 @@
 package Administrador;
 
-import entidades.Clientes;
 import entidades.Persona;
 import interfaces.InterfasAdminPersona;
 
