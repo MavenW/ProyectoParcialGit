@@ -5,7 +5,7 @@ package entidades;
 
 import java.util.Scanner;
 
-public class Camion extends vehiculo {
+public class Camion extends Vehiculo {
     private int capacidadCarga;
     private int numeroEjes;
     private String placa;
