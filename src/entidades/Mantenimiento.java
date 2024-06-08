@@ -7,7 +7,6 @@ public class Mantenimiento extends vehiculo {
     private float fechademantenimiento;
     private String cambiodeaceite;
     private String cambioneumatico;
-    private String kilometraje;
     
     //constructor por defecto
     public Mantenimiento(){
@@ -15,8 +14,9 @@ public class Mantenimiento extends vehiculo {
     
     //constructor parametrizado
     
-    public Mantenimiento(double costos,float kilometraje,float fechademantenimiento,
+    public Mantenimiento(String marca, String modelo, int año, String tipo, float okilometraje, double costos,float km,float fechademantenimiento,
             String cambiodeaceite,String cambineumatico){
+        super(marca, modelo, año, tipo, km);
         this.costos=costos;
         this.fechademantenimiento=fechademantenimiento;
         this.cambiodeaceite=cambiodeaceite;
