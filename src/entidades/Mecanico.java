@@ -12,23 +12,25 @@ public class Mecanico extends Persona{//inicio de la clase mecanico
         
     //metodo mostrar informacion (usamos los getters de la clase Persona)
     public void mostrarInfo(){
-        System.out.println("Nombre del //Mecanico//" + getNombres());
-        System.out.println("Appelido del //Mecanico//" + getApellidos());
-        System.out.println("Cedula del //Mecanico//" + getCedula());
-        System.out.println("Edad del //Mecanico//" + getEdad());
+    //se usa el "super." debido ah que esos metodos no estan en esta clase
+        System.out.println("Nombre del //Mecanico//" + super.getNombres());
+        System.out.println("Appelido del //Mecanico//" + super.getApellidos());
+        System.out.println("Cedula del //Mecanico//" + super.getCedula());
+        System.out.println("Edad del //Mecanico//" + super.getEdad());
     }
     
     //metodo ingresar datos (usamos los getters de la clase Persona)
     public void ingresarDatos(){
+    //se usa el "super." debido ah que esos metodos no estan en esta clase
         Scanner datos = new Scanner(System.in);
         System.out.println("Digite los nombres: ");
-        this.setNombres(datos.nextLine());
+        super.setNombres(datos.nextLine());
         System.out.println("Digite los apellidos: ");
-        this.setApellidos(datos.nextLine());
+        super.setApellidos(datos.nextLine());
         System.out.println("Digite la cedula: ");
-        this.setCedula(datos.nextLine());
+        super.setCedula(datos.nextLine());
         System.out.println("Digite la edad: ");
-        this.setEdad(datos.nextInt());
+        super.setEdad(datos.nextInt());
     }
-
+    
 }//fin de la clase mecanico
