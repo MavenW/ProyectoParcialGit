@@ -4,13 +4,15 @@ package entidades;
 import interfaces.Imprimible;
 import java.util.Scanner;
 
-public abstract class Vehiculo implements Imprimible{
+public class Vehiculo implements Imprimible{
     //Parametros aplicando el encapulamiento
     private String marca;
     private String modelo;
     private int año;
     private String tipo;
     private float kilometraje;
+    private Clientes oClientes;
+    private String codigoUnico;
     
     //contructor por defecto
     public Vehiculo(){}
@@ -111,8 +113,24 @@ public abstract class Vehiculo implements Imprimible{
         }
     }
     
+    public String getCodigoUnico(){
+        return this.codigoUnico;
+    }
+    
+    public void setCodigoUnico(String codigo){
+        String cedulaRegex = "^[0-9]{5}$";
+        if (codigo.length() != 5) {
+            System.out.println("El codigo debe tener 5 digitos");
+        } else if (!codigo.matches(cedulaRegex)) {
+            System.out.println("cedula debe tener solo digitos");
+        } else {
+            this.codigoUnico = codigo;
+        }
+    }
+    
     @Override
     public void imprimir() {
+        System.out.println("Codigo:" + getCodigoUnico());
         System.out.println("Marca: " + getMarca());
         System.out.println("Modelo: " + getModelo());
         System.out.println("Año: " + getAño());
@@ -120,7 +138,16 @@ public abstract class Vehiculo implements Imprimible{
         System.out.println("Kilometraje: " + getKilometraje());
     }
     
-    public void ingresarDatos(Scanner scan){
+    public void ingresarDatos(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Codigo");
+        String codigo = scan.nextLine();
+        if(codigo.length() != 5){
+            codigo = scan.nextLine();
+            this.setCodigoUnico(codigo);
+        }else{
+            this.setCodigoUnico(codigo);
+        }
         System.out.println("Marca: ");
         this.setMarca(scan.nextLine());
         System.out.println("Modelo: ");
@@ -128,7 +155,8 @@ public abstract class Vehiculo implements Imprimible{
         System.out.println("Año: ");
         this.setAño(scan.nextInt());
         System.out.println("Tipo: ");
-        this.setTipo(scan.nextLine());
+        String tipos = scan.nextLine();
+        this.setTipo(tipos);
         System.out.println("Kilometraje: ");
         this.setKilometraje(scan.nextFloat());
     }
