@@ -1,5 +1,7 @@
 package Administrador;
 
-public class AdminstradorRepacion {
+import interfaces.InterfasAdminReparacion;
+
+public class AdminstradorRepacion implements InterfasAdminReparacion{
     
 }
