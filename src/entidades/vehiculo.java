@@ -2,9 +2,8 @@
 package entidades;
 
 import interfaces.Imprimible;
-import interfaces.Reparable;
 
-public abstract class vehiculo implements Imprimible, Reparable{
+public abstract class vehiculo implements Imprimible{
     //Parametros aplicando el encapulamiento
     private String marca;
     private String modelo;

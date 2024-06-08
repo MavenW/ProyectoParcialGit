@@ -42,8 +42,4 @@ public class Camion extends vehiculo {
         }
     }
 
-    @Override
-    public void reparar(Mecanico mecanico) {
-        System.out.println("El camion: " + super.getMarca() + " " + super.getModelo() + " está siendo reparado por " + omecanico.getNombres() + " " + omecanico.getApellidos());
-    }
 }

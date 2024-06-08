@@ -41,9 +41,4 @@ public class Autobus extends vehiculo {
         System.out.println("Tiene baño: " + tieneBaño);
     }
     
-    @Override
-    public void reparar(Mecanico mecanico) {
-        System.out.println("El autobus " + getMarca() + " " + getModelo() + " está siendo reparada por " );
-    }
-    
 }
