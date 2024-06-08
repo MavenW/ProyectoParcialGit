@@ -5,6 +5,7 @@ package entidades;
 
 import interfaces.Imprimible;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Reparacion implements Imprimible {
     private vehiculo ovehiculo;
@@ -12,6 +13,10 @@ public class Reparacion implements Imprimible {
     private Clientes cliente;
     private String descripcion;
     private double costo;
+    private String codigoFactura;
+    
+    public Reparacion(){
+    }
 
     public Reparacion(vehiculo vehiculo, Mecanico mecanico, Clientes cliente, String descripcion, double costo) {
         this.ovehiculo = vehiculo;
@@ -80,6 +85,31 @@ public class Reparacion implements Imprimible {
             System.out.println("Costo no válido. Debe ser un número positivo.");
         }
     }
+    
+    public String getCodigoFactura() {
+        return codigoFactura;
+    }
+    
+    public void generarFactura() {
+        // Genera un código único para la factura
+        this.codigoFactura = UUID.randomUUID().toString();
+        System.out.println("Factura de Reparación");
+        System.out.println("---------------------");
+        System.out.println("Código de Factura: " + getCodigoFactura());
+        System.out.println("Detalles del Vehículo:");
+        System.out.println("Marca: " + ovehiculo.getMarca());
+        System.out.println("Modelo: " + ovehiculo.getModelo());
+        System.out.println("\nDetalles del Mecánico:");
+        System.out.println("Nombres: " + mecanico.getNombres());
+        System.out.println("Apellidos: " + mecanico.getApellidos());
+        System.out.println("\nDetalles del Cliente:");
+        System.out.println("Nombres: " + cliente.getNombres());
+        System.out.println("Apellidos: " + cliente.getApellidos());
+        System.out.println("\nDescripción de la Reparación: " + getDescripcion());
+        System.out.println("\nCosto de la Reparación: " + getCosto());
+        System.out.println("---------------------");
+        System.out.println("Gracias por su negocio!");
+    }
 
     @Override
     public void imprimir() {
@@ -96,9 +126,8 @@ public class Reparacion implements Imprimible {
     mecanico.ingresarDatos();
     System.out.println("Ingrese la descripcion de la reparacion:");
     this.setDescripcion(scan.nextLine());
-    System.out.println("Ingrese el costo de la reparacion:");
-    this.setCosto(scan.nextDouble());
-
+    //System.out.println("Ingrese el costo de la reparacion:");
+    //this.setCosto(scan.nextDouble());
     }
     
 }
