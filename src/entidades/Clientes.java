@@ -10,7 +10,7 @@ public class Clientes {
     private String cedula;
     private String telefono;
     private String correoElectronico;
-    private int numeroFactura;
+    //private int numeroFactura;
     
     //contructor por defecto
     public Clientes(){
@@ -52,7 +52,6 @@ public class Clientes {
             }
       }
             
-    
     public String getApellidos(){
         return apellidos;
     }
@@ -119,10 +118,7 @@ public class Clientes {
             System.out.println("Correo electronico valido");
         }
     }
-    
-    
-    
-    
+
     public void mostrarInfo(){
         System.out.println("Los nombres del cliente son: " + this.getNombres());
         System.out.println("Los apellidos del cliente son: " + this.getApellidos());
@@ -139,6 +135,5 @@ public class Clientes {
         this.setCedula(datos.nextLine());
         
     }
-    
-    
+
 }
