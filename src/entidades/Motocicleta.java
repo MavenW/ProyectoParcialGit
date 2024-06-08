@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Motocicleta extends Vehiculo {
     private int cilindrada;
     private String tipoMotor;
+    private String placa;
     
     //Contructor `por defecto
     public Motocicleta(){}
@@ -47,11 +48,27 @@ public class Motocicleta extends Vehiculo {
         }
     }
     
+    public String getPlaca(){
+        return this.placa;
+    }
+    
+    public void setPlaca(String pla){
+        String PlacaRegex = "([A-Z]{3}[-][0-9]{3}-[A-Z]{1}) | ([A-Z]{3}[-][0-9]{2}[-][0-9]{2})";
+        if (placa.length() != 9) {
+            System.out.println("La placa debe tener 9 digitos");
+        } else if (!pla.matches(PlacaRegex)) {
+            System.out.println("la placa es inavlida");
+        } else {
+            this.placa = pla;
+        }
+    }
+    
     @Override
     public void imprimir() {
         super.imprimir();
         System.out.println("Cilindrada: " + getCilindrada());
         System.out.println("Tipo de motor: " + getTipoMotor());
+        System.out.println("Placa: " + getPlaca());
     }
     
     @Override
@@ -62,6 +79,8 @@ public class Motocicleta extends Vehiculo {
         System.out.println("Tipo de motor: ");
         String motor = scan.nextLine();
         this.setTipoMotor(motor);
+        System.out.println("Numero de placa(ej.AAA-000-A): ");
+        this.setPlaca(scan.nextLine());
         System.out.print("Cilindrada: ");
         this.setCilindrada(scan.nextInt());
     }

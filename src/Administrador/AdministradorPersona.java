@@ -171,7 +171,6 @@ public class AdministradorPersona implements InterfasAdminPersona{
         Reparacion rep = new Reparacion((Mecanico)per, (Clientes)cli, "", 0.0, "");
         rep.setVehiculo(veh);
         rep.ingresarDatos(in);
-        rep.generarFactura();
         System.out.println("Factura generada con el código: " + rep.getCodigoFactura());
         this.agregarReparacion(rep);
     }
@@ -182,7 +181,7 @@ public class AdministradorPersona implements InterfasAdminPersona{
         int opcion = 0;
         do {
             System.out.println("\n**Menu de Persona**");
-            System.out.println("1.Registrar Mecanico \n 2. Regsitrar Cliente "
+            System.out.println("1.Registrar Mecanico \n2. Regsitrar Cliente "
                     + "\n3.Mostrar lista \n4.buscar x cedula \n5.Lista de vehiculos \n0.Salir");
             opcion = Integer.parseInt(in.nextLine());
             switch (opcion) {
@@ -196,7 +195,7 @@ public class AdministradorPersona implements InterfasAdminPersona{
                     oCliente.ingresarDatos();
                     this.agregar(oCliente);// guardar en la coleccion
                     System.out.println("Ingrese el vehiculo del cliente.");
-                    System.out.println("1.-Automovil \n 2.-Motocicleta \n 3.-Autobus \n 4.-Camion");
+                    System.out.println("1.-Automovil \n2.-Motocicleta \n 3.-Autobus \n 4.-Camion");
                     opcion = Integer.parseInt(in.nextLine());
                     if(opcion == 1){
                         Automovil oAutomovil = new Automovil();

@@ -53,20 +53,21 @@ public class Vehiculo implements Imprimible{
     
     //Metodo setter
     public void setModelo(String modelo) {
-        boolean valido = true;
-        char[] arreglo = modelo.toCharArray();//convertir en un arreglo de char
+    boolean valido = true;
+        char[] arreglo = modelo.toCharArray(); // convertir en un arreglo de char
         for (char c : arreglo) { // revisar cada caracter del arreglo
-            if (!Character.isAlphabetic(c) || Character.isWhitespace(c)) {
-                //si hay un caracter que no se alfabetico o que no sea espacio en blanco
-                System.out.println("Modelo no valido");
+            if (!Character.isAlphabetic(c) && !Character.isDigit(c) && c != '-' && c != '_') {
+                // si hay un caracter que no sea alfabético, numérico, guión o guión bajo
+                System.out.println("Modelo no válido");
                 valido = false;
-                break; //salir del lazo for
+                break; // salir del lazo for
             }
         }
-        if (valido==true) {// si valido es verdadero
+        if (valido) { // si valido es verdadero
             this.modelo = modelo;
         }
     }
+
 
     public int getAño() {
         return año;
@@ -143,7 +144,7 @@ public class Vehiculo implements Imprimible{
         System.out.println("Tipo: ");
         String tipos = scan.nextLine();
         this.setTipo(tipos);
-        System.out.println("Codigo");
+        System.out.println("Codigo: ");
         String codigo = scan.nextLine();
         if(codigo.length() != 5){
             codigo = scan.nextLine();
@@ -153,7 +154,7 @@ public class Vehiculo implements Imprimible{
         }
         System.out.println("Marca: ");
         this.setMarca(scan.nextLine());
-        System.out.println("Modelo: ");
+        System.out.println("Modelo(ej.ms-753): ");
         this.setModelo(scan.nextLine());
         System.out.println("Año: ");
         this.setAño(scan.nextInt());       

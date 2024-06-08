@@ -99,7 +99,7 @@ public class Camion extends Vehiculo {
         Scanner scan = new Scanner(System.in);
         System.out.println("\nIngresando datos del camion:");
         super.ingresarDatos();
-        System.out.println("Numero de placa: ");
+        System.out.println("Numero de placa(ej.AAA-000-A): ");
         this.setPlaca(scan.nextLine());
         System.out.println("Tipo de camion(Carga pesado-Liviano)");
         this.setTipoCamion(scan.nextLine());

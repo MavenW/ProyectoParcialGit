@@ -104,14 +104,14 @@ public class Reparacion implements Imprimible {
         System.out.println("Nombres: " + cliente.getNombres());
         System.out.println("Apellidos: " + cliente.getApellidos());
         System.out.println("\nDescripción de la Reparación: " + getDescripcion());
-        System.out.println("\nCosto de la Reparación: " + getCosto());
+        System.out.println("\nCosto de la Reparación: " + getCosto() + "Dolares");
         System.out.println("---------------------");
         System.out.println("Gracias por su negocio!");
     }
 
     @Override
     public void imprimir() {
-        System.out.println("Vehículo: " + ovehiculo.getMarca() + " " + ovehiculo.getModelo());
+        System.out.println("Vehículo: " + ovehiculo.getMarca() + " Modelo: " + ovehiculo.getModelo());
         System.out.println("Mecánico: " + mecanico.getNombres() + " " + mecanico.getApellidos());
         System.out.println("Cliente: " + cliente.getNombres() + " " + cliente.getApellidos());
         System.out.println("Descripción: " + getDescripcion());

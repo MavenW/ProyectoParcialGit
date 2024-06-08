@@ -9,6 +9,7 @@ public class Autobus extends Vehiculo {
     //Atributos con encapsulamiento
     private int capacidadPasajeros;
     private boolean tieneBaño;
+    private String placa;
     
     //Contructor por Defecto
     public Autobus(){}
@@ -44,11 +45,27 @@ public class Autobus extends Vehiculo {
         this.tieneBaño = tieneBaño;
     }
     
+    public String getPlaca(){
+        return this.placa;
+    }
+    
+    public void setPlaca(String pla){
+        String PlacaRegex = "([A-Z]{3}[-][0-9]{3}-[A-Z]{1}) | ([A-Z]{3}[-][0-9]{2}[-][0-9]{2})";
+        if (placa.length() != 9) {
+            System.out.println("La placa debe tener 9 digitos");
+        } else if (!pla.matches(PlacaRegex)) {
+            System.out.println("la placa es inavlida");
+        } else {
+            this.placa = pla;
+        }
+    }
+    
     @Override
     public void imprimir() {
         super.imprimir();
         System.out.println("Capacidad de pasajeros: " + getCapacidadPasajeros());
         System.out.println("Tiene baño: " + getIsTieneBaño());
+        System.out.println("Placa: " + getPlaca());
     }
     
     @Override
@@ -58,6 +75,8 @@ public class Autobus extends Vehiculo {
         super.ingresarDatos();
         System.out.print("Capacidad de opasajeros: ");
         this.setCapacidadPasajeros(scan.nextInt());
+        System.out.println("Numero de placa(ej.AAA-000-A): ");
+        this.setPlaca(scan.nextLine());
         System.out.println("Tiene baño(true-false): ");
         this.setTieneBaño(scan.nextBoolean());
     }

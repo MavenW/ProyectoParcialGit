@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Automovil extends Vehiculo {
     private int puertas;
     private String transmision;
+    private String placa;
     
     //contructor por defecto
     public Automovil(){}
@@ -47,11 +48,27 @@ public class Automovil extends Vehiculo {
         }
     }
     
+    public String getPlaca(){
+        return this.placa;
+    }
+    
+    public void setPlaca(String pla){
+        String PlacaRegex = "([A-Z]{3}[-][0-9]{3}-[A-Z]{1}) | ([A-Z]{3}[-][0-9]{2}[-][0-9]{2})";
+        if (placa.length() != 9) {
+            System.out.println("La placa debe tener 9 digitos");
+        } else if (!pla.matches(PlacaRegex)) {
+            System.out.println("la placa es inavlida");
+        } else {
+            this.placa = pla;
+        }
+    }
+    
     @Override
     public void imprimir() {
         super.imprimir();
         System.out.println("Puertas: " + getPuertas());
         System.out.println("Transmisión: " + getTransmision());
+        System.out.println("Placa: " + getPlaca());
     }
     
     @Override
@@ -61,6 +78,8 @@ public class Automovil extends Vehiculo {
         super.ingresarDatos();
         System.out.println("Transmision:");
         this.setTransmision(teclado.nextLine());
+        System.out.println("Numero de placa(ej.AAA-000-A): ");
+        this.setPlaca(teclado.nextLine());
         System.out.println("Puertas (ej.2):");
         int capacidad = Integer.parseInt(teclado.nextLine());
         this.setPuertas(capacidad); 
