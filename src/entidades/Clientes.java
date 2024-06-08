@@ -1,22 +1,21 @@
 //Elaborado por Daniel Fernando Castillo Mera - Grupo 2 - Curso: 2-2
 package entidades;
 
-public class Clientes {
+public class Clientes extends Persona{
     //atributos con metodos de accesos privados
+    //atributos propios de la clase hija Clienetes
     private String telefono;
     private String correoElectronico;
     
-    //contructor por defecto
-    public Clientes(){
-    }
-    
     //contructor con parametros
-   
-    
-    public Clientes(String telefono, String correoElectronico){
+    public Clientes(String nombres, String apellidos, String cedula, int edad, String telefono, String correoElectronico){
+        //con el operador de super hace referencia a los atributos de la clase padre Persona a la clase hija Clientes
+        super(nombres, apellidos, cedula, edad);
+        //inicializa los atributos propios
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
     }
+    
     
     //metodo getters
     

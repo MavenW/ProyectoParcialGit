@@ -1,5 +1,5 @@
+//Elaborado por Daniel Fernando Castillo Mera - Grupo 2 - Curso: 2-2
 //Clase padre Persona con sus hijas Clientes y Mecanico
-//revisar si esta bien creo que asi no se hace un padre:c
 package entidades;
 
 import java.util.Scanner;
@@ -8,17 +8,17 @@ public class Persona {
     private String nombres;
     private String apellidos;
     private String cedula;
-    private int edad;
+    int edad;
     
-    //constructor por defecto/sin parámetros con valores quemados
+    //constructor por defecto/sin parámetros
     public Persona(){
-        edad = 35;
     }
-    
-    public Persona(String nombres, String apellidos, String cedula){
+    //contructor con parametros
+    public Persona(String nombres, String apellidos, String cedula, int edad){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.cedula = cedula;
+        this.edad = edad;
     }
     
     public String getNombres(){
