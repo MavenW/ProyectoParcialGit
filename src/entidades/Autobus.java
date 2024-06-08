@@ -2,6 +2,9 @@
 package entidades;
 
 //Clase hija que hereda de Vehiculo
+
+import java.util.Scanner;
+
 public class Autobus extends vehiculo {
     //Atributos con encapsulamiento
     private int capacidadPasajeros;
@@ -29,7 +32,7 @@ public class Autobus extends vehiculo {
     }
     
     //Metodo Getter para el atributo isTieneBaño
-    public boolean isTieneBaño() {
+    public boolean getIsTieneBaño() {
         return tieneBaño;
     }
     
@@ -41,8 +44,18 @@ public class Autobus extends vehiculo {
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Capacidad de pasajeros: " + capacidadPasajeros);
-        System.out.println("Tiene baño: " + tieneBaño);
+        System.out.println("Capacidad de pasajeros: " + getCapacidadPasajeros());
+        System.out.println("Tiene baño: " + getIsTieneBaño());
+    }
+    
+    @Override
+    public void ingresarDatos(Scanner scan) {
+        System.out.println("\nIngresando datos del Autobus:");
+        super.ingresarDatos(scan);
+        System.out.print("Capacidad de opasajeros: ");
+        this.setCapacidadPasajeros(scan.nextInt());
+        System.out.println("Tiene baño(true-false): ");
+        this.setTieneBaño(scan.nextBoolean());
     }
     
 }

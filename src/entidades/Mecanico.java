@@ -11,6 +11,7 @@ public class Mecanico extends Persona{//inicio de la clase mecanico
     }
         
     //metodo mostrar informacion (usamos los getters de la clase Persona)
+    @Override
     public void mostrarInfo(){
     //se usa el "super." debido ah que esos metodos no estan en esta clase
         System.out.println("Nombre del //Mecanico//" + super.getNombres());
@@ -20,6 +21,7 @@ public class Mecanico extends Persona{//inicio de la clase mecanico
     }
     
     //metodo ingresar datos (usamos los getters de la clase Persona)
+    @Override
     public void ingresarDatos(){
     //se usa el "super." debido ah que esos metodos no estan en esta clase
         Scanner datos = new Scanner(System.in);

@@ -2,6 +2,7 @@
 package entidades;
 
 import interfaces.Imprimible;
+import java.util.Scanner;
 
 public abstract class vehiculo implements Imprimible{
     //Parametros aplicando el encapulamiento
@@ -116,5 +117,20 @@ public abstract class vehiculo implements Imprimible{
         System.out.println("Modelo: " + getModelo());
         System.out.println("Año: " + getAño());
         System.out.println("Tipo: " + getTipo());
+        System.out.println("Kilometraje: " + getKilometraje());
     }
+    
+    public void ingresarDatos(Scanner scan){
+        System.out.println("Marca: ");
+        this.setMarca(scan.nextLine());
+        System.out.println("Modelo: ");
+        this.setModelo(scan.nextLine());
+        System.out.println("Año: ");
+        this.setAño(scan.nextInt());
+        System.out.println("Tipo: ");
+        this.setTipo(scan.nextLine());
+        System.out.println("Kilometraje: ");
+        this.setKilometraje(scan.nextFloat());
+    }
+    
 }

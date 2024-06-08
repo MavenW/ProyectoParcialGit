@@ -2,6 +2,9 @@
 package entidades;
 
 //Clase hija que hereda de Vehiculo
+
+import java.util.Scanner;
+
 public class Camion extends vehiculo {
     private int capacidadCarga;
     private int numeroEjes;
@@ -83,11 +86,23 @@ public class Camion extends vehiculo {
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Capacidad de carga: " + getCapacidadCarga());
+        System.out.println("Capacidad de carga: " + getCapacidadCarga() + " Toneladas");
         System.out.println("Numero de ejes: " + getNumeroEjes());
         System.out.println("Placa: " + getPlaca());
     }
     
-    
+    @Override
+    public void ingresarDatos(Scanner scan) {
+        System.out.println("\nIngresando datos del camion:");
+        super.ingresarDatos(scan);
+        System.out.print("Capacidad(ej. 2 toneladas):");
+        this.setCapacidadCarga(scan.nextInt());
+        System.out.print("Numerp de ejes(ej. 3):");
+        this.setNumeroEjes(scan.nextInt());
+        System.out.println("Numero de placa: ");
+        this.setPlaca(scan.nextLine());
+        System.out.println("Tipo de camion(Carga pesado-Liviano)");
+        this.setTipoCamion(scan.nextLine());
+    }
     
 }

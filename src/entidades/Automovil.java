@@ -1,7 +1,10 @@
-//Clase realizada pod Gustavo Garcia
+//Clase realizada por Gustavo Garcia
 package entidades;
 
 // Clase Automóvil (Clase Hija) que hereda de Vehiculo
+
+import java.util.Scanner;
+
 public class Automovil extends vehiculo {
     private int puertas;
     private String transmision;
@@ -21,7 +24,11 @@ public class Automovil extends vehiculo {
     
     //Metodo Setter para el atributo Puertas
     public void setPuertas(int puertas) {
-        this.puertas = puertas;
+        if(puertas <=1 || puertas >4){
+            System.out.println("Numero de puertas invalido");
+        }else{
+            this.puertas = puertas;
+        }
     }
     
     //Metodo Getter para el atributo Transmision
@@ -31,14 +38,28 @@ public class Automovil extends vehiculo {
 
     //Metodo Setter para el atributo Transmision    
     public void setTransmision(String transmision) {
+        if (transmision.equalsIgnoreCase("manual") || transmision.equalsIgnoreCase("automatica")) {
         this.transmision = transmision;
+        } else {
+            System.out.println("Transmision no válida. Debe ser 'manual' o 'automatica'.");
+        }
     }
     
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Puertas: " + puertas);
-        System.out.println("Transmisión: " + transmision);
+        System.out.println("Puertas: " + getPuertas());
+        System.out.println("Transmisión: " + getTransmision());
+    }
+    
+    @Override
+    public void ingresarDatos(Scanner scan) {
+        System.out.println("\nIngresando datos del Automovil:");
+        super.ingresarDatos(scan);
+        System.out.print("Puertas: ");
+        this.setPuertas(scan.nextInt());
+        System.out.println("Transmision(Manual-Automatica): ");
+        this.setTransmision(scan.nextLine());
     }
     
 }
