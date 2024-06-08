@@ -5,7 +5,7 @@ package entidades;
 
 import java.util.Scanner;
 
-public class Autobus extends vehiculo {
+public class Autobus extends Vehiculo {
     //Atributos con encapsulamiento
     private int capacidadPasajeros;
     private boolean tieneBaño;
