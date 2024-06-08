@@ -1,7 +1,7 @@
 package entidades;
 
 
-public class Mantenimiento extends vehiculo {
+public class Mantenimiento extends Vehiculo {
     //Atributos con encapsulamiento
     
     private double costos;
