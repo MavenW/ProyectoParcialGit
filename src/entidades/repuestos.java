@@ -1,8 +1,7 @@
+
 package entidades;
-
 public class repuestos {
-
-    //atributos
+     //atributos
     private int codRepuesto;
     private String nombRepuesto;
     private String marca;
@@ -75,7 +74,6 @@ public class repuestos {
        this.stockRepuestos = stockRepuestos;
    }
    
-    
   //metodo de aplicar descuento
   //se aplicara un descuento del 10% si la compra del repuesto es mayor a 300 dolares
    public float aplicarDescuento(float precio, float desc){
@@ -91,8 +89,5 @@ public class repuestos {
    public void calcularPrecioFinal(float desc) {
         this.precio = this.precio - (this.precio * desc);
     }
-   
-   
-   
-   
+    
 }
