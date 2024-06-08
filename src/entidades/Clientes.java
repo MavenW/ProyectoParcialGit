@@ -131,5 +131,5 @@ public class Clientes {
         this.setApellidos(datos.nextLine());
         System.out.println("Digite la cedula del cliente: ");
         this.setCedula(datos.nextLine());
-    }
+    }    
 }
