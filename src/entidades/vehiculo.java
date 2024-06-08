@@ -59,6 +59,17 @@ public abstract class vehiculo implements Imprimible, Reparable{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public float getKilometraje(){
+        return this.kilometraje; 
+    }
+    
+    public void setKilometraje(float km){
+        if(km <= 0){
+            System.out.println("Kilometrage invalido");
+        }else{
+            this.kilometraje = km;
+        }
+    }
     
     @Override
     public void imprimir() {
