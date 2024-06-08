@@ -32,4 +32,9 @@ public class Camion extends vehiculo {
     public void setNumeroEjes(int numeroEjes) {
         this.numeroEjes = numeroEjes;
     }
+
+    @Override
+    public void reparar(Mecanico mecanico) {
+        System.out.println("El camion: " + getMarca() + " " + getModelo() + " está siendo reparado por ");
+    }
 }

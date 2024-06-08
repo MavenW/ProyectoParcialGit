@@ -4,7 +4,7 @@ package entidades;
 import interfaces.Imprimible;
 import interfaces.Reparable;
 
-public class vehiculo implements Imprimible, Reparable{
+public abstract class vehiculo implements Imprimible, Reparable{
     //Parametros aplicando el encapulamiento
     private String marca;
     private String modelo;
@@ -66,8 +66,5 @@ public class vehiculo implements Imprimible, Reparable{
         System.out.println("Tipo: " + tipo);
     }
     
-    @Override
-    public void reparar(Mecanico mecanico) {
-        
-    }
+    
 }

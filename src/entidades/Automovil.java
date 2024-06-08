@@ -6,6 +6,7 @@ public class Automovil extends vehiculo {
     private int puertas;
     private String transmision;
     
+    
     //Contructor Parametrizado que hereda atributos de la clase padre
     public Automovil(String marca, String modelo, int año, String tipo, int puertas, String transmision) {
         super(marca, modelo, año, tipo);
@@ -39,4 +40,10 @@ public class Automovil extends vehiculo {
         System.out.println("Puertas: " + puertas);
         System.out.println("Transmisión: " + transmision);
     }
+    
+    @Override
+    public void reparar(Mecanico mecanico) {
+        System.out.println("El automóvil " + getMarca() + " " + getModelo() + " está siendo reparado por ");
+    }
+    
 }
