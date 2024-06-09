@@ -30,7 +30,7 @@ public class Repuestos {
     public int getCodRepuesto (){
         return codRepuesto;
     }
-    public void setCodRepuesto( int codRepuesto){
+    public void setCodRepuesto( int codRepuesto){ //validar que el codigo sean numeros positivos
         if(codRepuesto < 0){
             System.out.println("El codigo del repuesto no puede ser negativo");
         }
@@ -82,7 +82,8 @@ public class Repuestos {
     public ArrayList<Repuestos> getListaRepuestos() {
         return this.listaRepuestos;
     }
-
+       
+   //coleccion de los repuestos
     public void setListaRepuestos(ArrayList<Repuestos> lista) {
         this.listaRepuestos = lista;
     }
