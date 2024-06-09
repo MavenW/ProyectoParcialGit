@@ -6,7 +6,7 @@ package entidades;
 import java.util.Scanner;
 
 public class Camion extends Vehiculo {
-    private int capacidadCarga;
+    private float capacidadCarga;
     private int numeroEjes;
     private String placa;
     private String tipoCamion;
@@ -24,12 +24,12 @@ public class Camion extends Vehiculo {
     }
     
     //Metodo Getter para el atributo CapacidadCarga
-    public int getCapacidadCarga() {
+    public float getCapacidadCarga() {
         return capacidadCarga;
     }
     
     //Metodo Setter para el atributo CapacidadCarga
-    public void setCapacidadCarga(int capacidadCarga) {
+    public void setCapacidadCarga(float capacidadCarga) {
         if(capacidadCarga >=2 || capacidadCarga <=4){
             this.capacidadCarga = capacidadCarga;
         }else{
@@ -104,7 +104,8 @@ public class Camion extends Vehiculo {
         System.out.println("Tipo de camion(Carga pesado-Liviano)");
         this.setTipoCamion(scan.nextLine());
         System.out.print("Capacidad(ej. 2 toneladas):");
-        this.setCapacidadCarga(scan.nextInt());
+        String capacidad = scan.nextLine();
+        this.setCapacidadCarga(Float.parseFloat(capacidad));
         System.out.print("Numerp de ejes(ej. 3):");
         this.setNumeroEjes(Integer.parseInt(scan.nextLine()));
     }

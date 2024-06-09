@@ -17,6 +17,7 @@ public interface InterfasAdminPersona {
     public abstract void agregarReparacion(Scanner in);
     public abstract void mostrarCliente();
     public abstract void mostrarMecanico();
+    public abstract void mostrarVehiculosEspecificos();
     public Persona buscarPersonaxCedula(String cedula);
     public Reparacion buscarReparacionPorCodigoFactura(String codigoFactura);
     public void agregarReparacion(Reparacion r);
