@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class Clientes extends Persona{
     //atributos con metodos de accesos privados
-    //atributos propios de la clase hija Clienetes
+    //atributos propios de la clase hija Clientes
     private String telefono;
     private String correoElectronico;
     
-    //sobreescritura de contructor
-    public Clientes(){}
+    public Clientes(){
+        super(); //llamando al cosntructor por defecto de la clase Padre
+    }
     
     //contructor con parametros
     public Clientes(String nombres, String apellidos, String cedula, int edad, String telefono, String correoElectronico){
@@ -50,12 +51,15 @@ public class Clientes extends Persona{
             System.out.println("Correo electronico valido");
         }
     }
+   
+    @Override
+    public String toString(){
+        return "Cliente: " + super.toString() + "telefono: " + this.getTelefono() + "correo electronico: " + this.getCorreoElectronico();
+    }
     
     public void mostrarDatos(){
-        System.out.println("Nombres: " + this.getNombres());
-        System.out.println("Apellidos: " + this.getApellidos());
-        System.out.println("Cedula: " + this.getCedula());
-        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Mostrando cliente: ");
+        super.mostrarInfo();//llama a metodo mostrarInfo de la clase padre(super)
         System.out.println("Telefono: " + this.getTelefono());
         System.out.println("Correo Electronico: " + this.getCorreoElectronico());
     }
@@ -63,13 +67,87 @@ public class Clientes extends Persona{
     @Override
     public void ingresarDatos(){
         Scanner datos = new Scanner(System.in);
-        System.out.println("Digite los nombres: ");
-        this.setNombres(datos.nextLine());
-        System.out.println("Digite los apellidos: ");
-        this.setApellidos(datos.nextLine());
-        System.out.println("Digite la cedula: ");
-        this.setCedula(datos.nextLine());
-        System.out.println("Digite la edad: ");
-        this.setEdad(datos.nextInt());
+        System.out.println("Ingresando cliente: ");
+        super.ingresarDatos();
+        System.out.println("Digite su telefono: ");
+        this.setTelefono(datos.nextLine());
+        System.out.println("Digite su correo electronico: ");
+        this.setCorreoElectronico(datos.nextLine());
     }
+
+    @Override
+    public void agregar(Persona p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void eliminar(Persona p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void agregarVehiculo(Vehiculo v) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void eliminarvehiculo(Vehiculo v) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrarVehiculo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Vehiculo buscarVehiculoxCodigo(String tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void agregarReparacion(Scanner in) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrarCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrarMecanico() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrarVehiculosEspecificos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Persona buscarPersonaxCedula(String cedula) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Reparacion buscarReparacionPorCodigoFactura(String codigoFactura) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void agregarReparacion(Reparacion r) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void menuDeOpciones() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

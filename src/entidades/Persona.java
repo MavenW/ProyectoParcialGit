@@ -3,12 +3,13 @@
 package entidades;
 
 import java.util.Scanner;
+import interfaces.InterfasAdminPersona;
 
-public class Persona {
+public abstract class Persona implements InterfasAdminPersona{
     private String nombres;
-    String apellidos;
+    private String apellidos;
     private String cedula;
-    int edad;
+    private int edad;
     
     //constructor por defecto/sin parámetros
     public Persona(){
@@ -92,6 +93,7 @@ public class Persona {
         }
     }
     
+    
     public void mostrarInfo(){
         System.out.println("Nombres: " + this.getNombres());
         System.out.println("Apellidos: " + this.getApellidos());
@@ -110,4 +112,5 @@ public class Persona {
         System.out.println("Digite la edad: ");
         this.setEdad(datos.nextInt());
     }
+    
 }
