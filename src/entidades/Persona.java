@@ -5,7 +5,7 @@ package entidades;
 import java.util.Scanner;
 import interfaces.InterfasAdminPersona;
 
-public abstract class Persona implements InterfasAdminPersona{
+public abstract class Persona{
     private String nombres;
     private String apellidos;
     private String cedula;
