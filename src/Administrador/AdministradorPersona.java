@@ -1,3 +1,4 @@
+//Clase creada por Gustavo García.
 package Administrador;
 
 import static Administrador.AdministradorReparacion.listaReparaciones;

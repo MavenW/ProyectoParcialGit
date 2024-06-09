@@ -6,11 +6,11 @@ import interfaces.InterfasAdminReparacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AdministradorReparacion implements InterfasAdminReparacion{
+public class AdministradorReparacion implements InterfasAdminReparacion {
 
     //coleccion para almacenar los repuestos
     public static ArrayList<Repuestos> listaRepuestos = new ArrayList();
-    
+
     //coleecion para almacenar las reparaciones
     public static ArrayList<Reparacion> listaReparaciones = new ArrayList<>();
 
@@ -41,11 +41,62 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
         return null;
     }
 
-//    @Override
-//    public void agregarRepuesto() {
-//       
-//    }
-    
+    @Override
+    public void agregarRepuesto() {
+        boolean seguir = true;
+         Repuestos repuesto = null;
+
+        do {  // se le pide al usuario que ingrese el nombre del repuesto
+            System.out.println("Ingrese nombre del repuesto: ");
+            String nombre = in.nextLine();
+
+            // buscamos el repuesto en la lista de repuestos
+            repuesto = this.buscarxNombre(nombre); // línea main
+            if(repuesto == null){
+            if(AdministradorReparacion.listaRepuestos.isEmpty()){
+                System.out.println("La lista de repuestos está vacía.");
+            }
+            
+            System.out.println("Repuesto no encontrado. ¿Desea agregar un nuevo repuesto? (S/N)");
+            String respuesta = in.nextLine();
+            
+            if(respuesta.equalsIgnoreCase("S")){
+                repuesto = new Repuesto();
+                //si el usuario va a agregar un nuevo repuesto debe poner su descripcion
+                System.out.println("Ingrese código del repuesto: ");
+                int codigo = in.nextInt();
+                repuesto.setCodRepuesto(codigo);
+                
+                System.out.println("Ingrese nombre del repuesto: ");
+                String nomb = in.next();
+                repuesto.setnombRepuesto(nomb);
+                
+                System.out.println("Ingrese marca del repuesto: ");
+                String marca = in.next();
+                repuesto.setMarca(marca);
+                
+                System.out.println("Ingrese precio del repuesto: ");
+                float precio = in.nextFloat();
+                repuesto.setPrecio(precio);
+                
+                System.out.println("Ingrese stock del repuesto: ");
+                int stock = in.nextInt();
+                repuesto.setStockRepuestos(stock);
+                
+                AdministradorReparacion.listaRepuestos.add(repuesto);
+                System.out.println("Repuesto agregado con éxito.");
+                seguir = false;
+            } else {
+                System.out.println("No se agregó el repuesto.");
+                seguir = false;
+            }
+        } else {
+            System.out.println("El repuesto ya existe en la lista.");
+            seguir = false;
+        }
+    } while (seguir);
+}
+           
     @Override
     public void agregarReparacion(Reparacion r) {
         listaReparaciones.add(r);
@@ -72,7 +123,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
         }
         return null;
     }
-    
+
     @Override
     public Reparacion buscarPorCodigoFactura(String codigoFactura) {
         for (Reparacion r : listaReparaciones) {
@@ -82,7 +133,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
         }
         return null;
     }
-    
+
     @Override
     public void menuDeOpciones() {
         Scanner in = new Scanner(System.in);
@@ -109,7 +160,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                         System.out.println("1.Registrar repuesto \n 2. Mostrar lista de repuesto "
                                 + "\n3. Buscar repuesto por nombre \n0. Salir");
                         opcion = Integer.parseInt(in.nextLine());
-                        switch (opcion){
+                        switch (opcion) {
                             case 1:
                                 Repuestos ORepuestos = new Repuestos();
                                 this.agregar(ORepuestos);
@@ -124,7 +175,7 @@ public class AdministradorReparacion implements InterfasAdminReparacion{
                                 //falta implementar
                                 break;
                             case 4:
-                            }
+                        }
                     } while (opcion != 0);
                     break;
                 case 4:
