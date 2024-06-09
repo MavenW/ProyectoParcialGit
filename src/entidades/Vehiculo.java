@@ -147,6 +147,7 @@ public class Vehiculo implements Imprimible{
         System.out.println("Codigo: ");
         String codigo = scan.nextLine();
         if(codigo.length() != 5){
+            System.out.println("Denen ser 5 numeros.");
             codigo = scan.nextLine();
             this.setCodigoUnico(codigo);
         }else{
